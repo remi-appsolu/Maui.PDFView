@@ -45,7 +45,10 @@ namespace Example.Business.UI.ViewModels
             //source = new AssetPdfSource("Example.Resources.PDF.pdf2.pdf");
             //source = new FilePdfSource(_repository.GetPdfSource());
             //source = new ByteArrayPdfDataSource(await File.ReadAllBytesAsync(_repository.GetPdfSource()));
-            source = new HttpPdfSource("https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf");
+
+            //download timeout on Windows ??? source = new HttpPdfSource("https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf");
+            source = new HttpPdfSource("https://sample-files.com/downloads/documents/pdf/image-doc.pdf");
+
             PdfSource = await source.GetFilePathAsync();
         }
         
